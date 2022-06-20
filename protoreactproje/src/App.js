@@ -1,11 +1,14 @@
 import logo from './logo.svg';
-
+import Test from './Test';
+import styles from './App.module.css';
 function App() {
   return (
     <>
-      <div className='App'>test</div>
-      <h3>{process.env.NODE_ENV}</h3>
-      <p>{process.env.REACT_APP_API_URL}</p>
+      <div className={styles.App}>
+        <h3>{process.env.NODE_ENV}</h3>
+        <p>{process.env.REACT_APP_API_URL}</p>
+      </div>
+      <Test />
       {/* Logo png dosyası static bir dosya ve publicde bulunuyor, direkt çağırabilirim favicon.ico gibi 
       Fakat logo.svg' publicde olmadığı için import etmem ve kullanmam gerekiyor.
       */}
