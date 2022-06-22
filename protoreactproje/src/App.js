@@ -1,11 +1,22 @@
 import './tailwind.css';
 import Button from './components/Button';
+import Tab from './components/Tab';
+import { useState } from 'react';
 
 function App() {
-  const todos = ['todo1', 'todo2', 'todo3'];
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
     <>
+      <div style={{ padding: 20 }}>
+        <button onClick={() => setActiveTab(2)}>Aktif Tabı değiştir</button>
+        <Tab activeTab={activeTab} setActiveTab={setActiveTab}>
+          <Tab.panel title='Profil'>1.tab</Tab.panel>
+          <Tab.panel title='Hakkında'>2.tab</Tab.panel>
+          <Tab.panel title='Ayarlar'>3.tab</Tab.panel>
+        </Tab>
+      </div>
+
       <div style={{ padding: 20 }}>
         <Button text='Button örneği'>Buttoncuk</Button>
         <Button text='Button örneği' variant='success' />
@@ -21,11 +32,6 @@ function App() {
           Arama
         </label>
         <input type='text' id='search' tabIndex='1' />
-        <ul>
-          {todos.map((todo, index) => (
-            <li key={index}>{todo}</li>
-          ))}
-        </ul>
       </main>
     </>
   );
