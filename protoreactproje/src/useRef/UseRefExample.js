@@ -1,4 +1,8 @@
-import { useRef } from 'react';
+import { forwardRef, useRef } from 'react';
+
+const Input = forwardRef((props, ref) => {
+  return <input ref={ref} type='text' {...props} />;
+});
 
 function UseRefExample() {
   const inputRef = useRef();
@@ -6,10 +10,11 @@ function UseRefExample() {
   const focusInput = () => {
     inputRef.current.focus();
   };
+
   return (
     <>
       <h1>useRef - forwardRef</h1>
-      <input type='text' ref={inputRef} />
+      <Input ref={inputRef} />
       <button onClick={focusInput}>Focusla</button>
     </>
   );
