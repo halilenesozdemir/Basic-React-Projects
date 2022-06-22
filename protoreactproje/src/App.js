@@ -1,38 +1,18 @@
-import './style.scss';
-import { createElement } from 'react';
-
-function Button(props) {
-  return <button>{props.text}</button>;
-}
+import './tailwind.css';
+import Button from './components/Button';
 
 function App() {
   const todos = ['todo1', 'todo2', 'todo3'];
-  const h1 = createElement('h1', null, 'prototurk.com');
-  const ul = createElement(
-    'ul',
-    null,
-    todos.map(todo => createElement('li', null, todo))
-  );
-  const button = createElement(Button, {
-    text: 'Button Text',
-  });
-
-  return createElement(
-    'main',
-    {
-      className: 'test',
-      id: 'main',
-    },
-    h1,
-    ul,
-    button
-  );
-
-  const name = 'Tayfun';
 
   return (
     <>
-      <Button text='merhaba button'></Button>
+      <div style={{ padding: 20 }}>
+        <Button text='Button örneği'>Buttoncuk</Button>
+        <Button text='Button örneği' variant='success' />
+        <Button text='Button örneği' variant='danger' />
+        <Button text='Button örneği' variant='warning' />
+      </div>
+
       <main id='main' className='test'>
         <h1 style={{ color: 'red', backgroundColor: 'yellow' }} tabIndex='3'>
           prototurk.com
@@ -41,7 +21,6 @@ function App() {
           Arama
         </label>
         <input type='text' id='search' tabIndex='1' />
-        {name.toUpperCase()}
         <ul>
           {todos.map((todo, index) => (
             <li key={index}>{todo}</li>
