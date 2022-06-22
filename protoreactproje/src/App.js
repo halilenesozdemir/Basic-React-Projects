@@ -1,13 +1,27 @@
-import './tailwind.css';
-import Button from './components/Button';
-import Tab from './components/Tab';
+import Test from './lifecycle/Test';
 import { useState } from 'react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState(1);
+  const [show, setShow] = useState(false);
 
   return (
     <>
+      <button onClick={() => setShow(!show)}>{show ? 'Gizle' : 'Goster'}</button>
+
+      {show && <Test />}
+    </>
+  );
+}
+
+export default App;
+
+/* import Button from './components/Button';
+import Tab from './components/Tab';
+import { useState } from 'react'; */
+
+// const [activeTab, setActiveTab] = useState(1);
+
+/*  <>
       <div style={{ padding: 20 }}>
         <button onClick={() => setActiveTab(2)}>Aktif Tabı değiştir</button>
         <Tab activeTab={activeTab} setActiveTab={setActiveTab}>
@@ -33,8 +47,4 @@ function App() {
         </label>
         <input type='text' id='search' tabIndex='1' />
       </main>
-    </>
-  );
-}
-
-export default App;
+    </> */
