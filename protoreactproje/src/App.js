@@ -1,14 +1,11 @@
 import Test from './lifecycle/Test';
 import { useState } from 'react';
+import UseRefExample from './useRef/UseRefExample';
 
 function App() {
-  const [show, setShow] = useState(false);
-
   return (
     <>
-      <button onClick={() => setShow(!show)}>{show ? 'Gizle' : 'Goster'}</button>
-
-      {show && <Test />}
+      <UseRefExample />
     </>
   );
 }
