@@ -3,6 +3,8 @@ import Test from './Test';
 import styles from './App.module.css';
 import { Title } from './Components';
 import Bootstrap from './Bootstrap';
+import Tailwind from './Tailwind';
+import './tailwind.css';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
       )}
 
       <Bootstrap />
+      <Tailwind />
     </>
   );
 }
