@@ -50,7 +50,7 @@ const menu = [
   {
     id: 7,
     title: 'karnıyarık',
-    category: 'lunch',
+    category: 'dinner',
     price: 19.99,
     img: './images/item-7.jpeg',
     desc: `Karnıyarık Türk mutfağının belli başlı patlıcan yemeklerinden biridir. Hazırlanırken ana malzeme olan patlıcanın dışında soğan, biber, domates ve kıyma da kullanılır. `,
@@ -70,6 +70,31 @@ const menu = [
     price: 16.99,
     img: './images/item-9.jpeg',
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
+  {
+    id: 10,
+    title: 'Kuymak',
+    category: 'breakfast',
+    price: 16.99,
+    img: './images/item-10.jpeg',
+    desc: `
+  Kuymak, Karadeniz yöresine ait bir yemek türüdür. Mısır unu, tereyağı ve çökelekten meydana gelen Kuymak, Bazı bölgelerde farklı peynir çeşitleriyle de yapılabilmektedir.`,
+  },
+  {
+    id: 11,
+    title: 'Makarna',
+    category: 'dinner',
+    price: 16.99,
+    img: './images/item-11.jpeg',
+    desc: `En çok kullanılan öğrenci yemeği. kolay yapım az yanma ve ziyan tehlikesi. pişirirkene ağzını yarım açmak lazım yoksa taşıyo`,
+  },
+  {
+    id: 12,
+    title: 'Ekşili Köfte',
+    category: 'dinner',
+    price: 22.99,
+    img: './images/item-12.jpeg',
+    desc: `içinde havuç,patates,köfte bulunan lezzet patlaması ve şifa deposu çorba.terbiyesi yapılmalıdır.yemeden önce karabiber eklenmesi tavsiye edilir.`,
   },
 ];
 export default menu;
