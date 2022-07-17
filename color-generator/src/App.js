@@ -6,16 +6,21 @@ import Values from 'values.js';
 function App() {
   const [color, setColor] = useState('');
   const [error, setError] = useState(false);
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(new Values('#f15025').all(10));
+  const [placeholder, setPlaceholder] = useState('#f15025');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
       let colors = new Values(color).all(10);
-      console.log(colors);
+      setList(colors);
+      setError(false);
+      setPlaceholder(color.value);
     } catch (error) {
       setError(true);
       console.log(error);
+      setColor('');
+      setPlaceholder('');
     }
   };
 
@@ -25,11 +30,20 @@ function App() {
         <h3>Color Generator</h3>
         <form onSubmit={handleSubmit}>
           <input
-            type='text'
+            type='color'
             value={color}
             onChange={(e) => setColor(e.target.value)}
             placeholder='#f15025'
             className={`${error ? 'error' : null}`}
+          />
+          <input
+            type='text'
+            id='color'
+            name='color'
+            placeholder={placeholder}
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+            className={error ? 'error' : ''}
           />
           <button className='btn' type='submit'>
             submit
@@ -37,7 +51,9 @@ function App() {
         </form>
       </section>
       <section className='colors'>
-        <h4>List goes here.</h4>
+        {list.map((color, index) => {
+          return <SingleColor key={index} {...color} index={index} hexColor={color.hex} />;
+        })}
       </section>
     </>
   );
