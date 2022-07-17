@@ -19,9 +19,11 @@ function App() {
     } catch (error) {
       setError(true);
       console.log(error);
+      // when enter the wrong value don't do anything.
       setColor('');
       setPlaceholder('');
     }
+    console.log(list);
   };
 
   return (
@@ -29,21 +31,13 @@ function App() {
       <section className='container'>
         <h3>Color Generator</h3>
         <form onSubmit={handleSubmit}>
-          <input
-            type='color'
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-            placeholder='#f15025'
-            className={`${error ? 'error' : null}`}
-          />
+          <input type='color' value={color} onChange={(e) => setColor(e.target.value)} placeholder='#f15025' />
           <input
             type='text'
-            id='color'
-            name='color'
             placeholder={placeholder}
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            className={error ? 'error' : ''}
+            className={`${error ? 'error' : null}`}
           />
           <button className='btn' type='submit'>
             submit
